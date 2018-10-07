@@ -24,7 +24,7 @@ namespace Persons
             };
             Get["/test"] = param =>
             {
-                return personRepository.Find(Guid.Parse("bba5d28d-fb8d-4cf7-b44f-fd22650c066e")).Name;
+                return personRepository.Find(Guid.Parse("719a7770-0c6e-427c-88f9-bc91a56a90af")).Name;
             };
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Persons.Abstractions
 {
-    interface IQueryHandler<in TQuery, out TResult>
+    public interface IQueryHandler<in TQuery, out TResult>
         where TQuery: IQuery<TResult>
     {
         TResult Handle(TQuery query);

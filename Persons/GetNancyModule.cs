@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nancy;
 
-namespace Persons.Abstractions
+namespace Persons
 {
-    public interface IQuery<out TResult>
+    public class GetNancyModule : NancyModule
     {
+
     }
 }

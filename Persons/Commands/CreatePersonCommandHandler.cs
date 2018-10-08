@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Persons.Abstractions;
+﻿using Persons.Abstractions;
 
-namespace Persons.Commands
+namespace Persons
 {
     public class CreatePersonCommandHandler : ICommandHandler<CreatePersonCommand>
     {
+        private IPersonCreator PersonCreator { get; }
         private IPersonRepository PersonRepository { get; }
 
-        public CreatePersonCommandHandler(IPersonRepository personRepository)
+        public CreatePersonCommandHandler(
+            IPersonCreator personCreator,
+            IPersonRepository personRepository)
         {
+            PersonCreator = personCreator;
             PersonRepository = personRepository;
         }
 
         public void Execute(CreatePersonCommand command)
         {
-                    }
+            Person person = PersonCreator.Create(command.Name, command.BirthDay);
+            if (person != null)
+                PersonRepository.Insert(person);
+        }
     }
 }

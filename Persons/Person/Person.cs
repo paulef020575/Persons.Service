@@ -14,18 +14,23 @@ namespace Persons
 
         public DateTime Birthday { get; set; }
 
-        public decimal Age
+        public int Age
         {
-            get
-            {
-                DateTime today = DateTime.Today;
-                int age = today.Year - Birthday.Year;
-                if (today.Month < Birthday.Month
-                    || (today.Month == Birthday.Month && today.Day < Birthday.Day))
-                    age--;
-
-                return age;
-            }
+            get { return GetAge(Birthday); }
         }
+
+        internal Person() { }
+
+        public static int GetAge(DateTime birthday)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - birthday.Year;
+            if (today.Month < birthday.Month
+                || (today.Month == birthday.Month && today.Day < birthday.Day))
+                age--;
+
+            return age;
+        }
+
     }
 }

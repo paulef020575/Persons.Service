@@ -66,14 +66,19 @@
   <ItemGroup>
     <Compile Include="Commands\CreatePersonCommand.cs" />
     <Compile Include="Commands\CreatePersonCommandHandler.cs" />
+    <Compile Include="GetNancyModule.cs" />
+    <Compile Include="Person\IPersonCreator.cs" />
+    <Compile Include="Person\PersonCreator.cs" />
+    <Compile Include="Person\PersonDto.cs" />
     <Compile Include="Query.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Query.resx</DependentUpon>
     </Compile>
+    <Compile Include="Query\GetPersonQuery.cs" />
     <Compile Include="Repository\IPersonRepository.cs" />
     <Compile Include="Person\Person.cs" />
-    <Compile Include="PersonsNancyModule.cs" />
+    <Compile Include="PostNancyModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\PersonRepository.cs" />
   </ItemGroup>

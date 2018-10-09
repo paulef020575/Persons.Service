@@ -3,7 +3,7 @@ using Persons.Abstractions;
 
 namespace Persons
 {
-    public class GetPersonQuery : IQuery<Person>
+    public class GetPersonQuery : IQuery<PersonDto>
     {
         public Guid Id { get; set; }
     }

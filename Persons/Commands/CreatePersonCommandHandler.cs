@@ -1,4 +1,5 @@
-﻿using Persons.Abstractions;
+﻿using System;
+using Persons.Abstractions;
 
 namespace Persons
 {
@@ -17,9 +18,15 @@ namespace Persons
 
         public void Execute(CreatePersonCommand command)
         {
-            Person person = PersonCreator.Create(command.Name, command.BirthDay);
+            Person person = PersonCreator.Create(command.Id, command.Name, command.BirthDay);
             if (person != null)
+            {
                 PersonRepository.Insert(person);
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }

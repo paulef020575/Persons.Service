@@ -76,6 +76,7 @@
       <DependentUpon>Query.resx</DependentUpon>
     </Compile>
     <Compile Include="Query\GetPersonQuery.cs" />
+    <Compile Include="Query\GetPersonQueryHandler.cs" />
     <Compile Include="Repository\IPersonRepository.cs" />
     <Compile Include="Person\Person.cs" />
     <Compile Include="PostNancyModule.cs" />

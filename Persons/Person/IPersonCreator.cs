@@ -4,6 +4,6 @@ namespace Persons
 {
     public interface IPersonCreator
     {
-        Person Create(string name, DateTime birthday);
+        Person Create(Guid id, string name, DateTime birthday);
     }
 }
